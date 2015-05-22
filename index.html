@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+   <meta charset="utf-8">
+     <link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+    <link href="css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body ng-app="myApp">
+    <h1>Challenge Three</h1>
+    <div ng-controller="oneController">
+    <div class="container">
+  <h2>Countires Data</h2>
+  
+     <table class="table table-striped">
+  <thead>
+    <tr>
+       <th>name</th>
+        <th>1960</th>
+        <th>1970</th>
+        <th>1980</th>
+        <th>1990</th>
+        <th>2000</th>
+        <th>2010</th>
+        <th>% growth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="n in countries|orderBy:name">
+      
+      <td>{{ n.name }}</td>
+      <td>{{ n.1960 }}</td>
+      <td>{{ n.1970 }}</td>
+      <td>{{ n.1980 }}</td>
+      <td>{{ n.1990 }}</td>
+      <td>{{ n.2000 }}</td> 
+      <td>{{ n.2010 }}</td>
+      <td>{{((n.2010-n.1960)/n.2010)*100}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>
